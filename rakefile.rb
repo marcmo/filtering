@@ -25,7 +25,7 @@ Profiling=TimeProf
 # Profiling=StandardHeap
 # Profiling=AllocationType
 # Profiling=ConstructorAlloc
-CLEAN.include(Output,"**/*.o","**/*.hi","dist","#{Program}.zip","*.exe","#{ProfilingExecutable}","#{Executable}","#{ThreadedExecutable}")
+CLEAN.include(Output,"**/*.o","**/*.hi","dist","tmp","#{Program}.zip","*.exe","#{ProfilingExecutable}","#{Executable}","#{ThreadedExecutable}")
 SrcFiles = FileList.new('*.hs')
 
 file Executable => SrcFiles do
