@@ -3,9 +3,6 @@ require 'benchmark'
 
 Program="filtering"
 Output="output.out"
-# Input="sample.in"
-# Input="C-small-practice.in"
-# Input = "/Users/oliver/tmp/output.txt"
 Input = "/home/omueller/shared/Y20LG1_CAN_Trace.asc"
 ParallelOptions="+RTS -N2 -RTS"
 Executable = "#{Program}"
@@ -28,6 +25,7 @@ Profiling=TimeProf
 CLEAN.include(Output,"**/*.o","**/*.hi","dist","tmp","#{Program}.zip","*.exe","#{ProfilingExecutable}","#{Executable}","#{ThreadedExecutable}")
 SrcFiles = FileList.new('*.hs')
 
+desc "build the application (#{Executable})"
 file Executable => SrcFiles do
   sh "ghc -O2 -o #{Program} -outputdir tmp --make #{MainHs} -fforce-recomp"
 end

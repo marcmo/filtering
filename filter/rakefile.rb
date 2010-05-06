@@ -10,6 +10,7 @@ MainHs="Main.hs"
 CLEAN.include("tmp","**/*.o","**/*.hi","dist","*.exe","#{Executable}")
 SrcFiles = FileList.new('*.hs')
 
+desc "build the #{Executable}-application"
 file Executable => SrcFiles do
   sh "ghc -O2 -o #{Program} -outputdir tmp --make #{MainHs} -i.. -fforce-recomp"
 end
