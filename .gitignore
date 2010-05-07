@@ -2,3 +2,5 @@
 *.exe
 *.hi
 _cabal
+filter/filter
+filter/tmp
